@@ -1,7 +1,8 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import { expect, $ } from '@wdio/globals'
 import {home_locators} from '../locators/homeLocators.js';
-import { platform } from '../../wdio.conf.js';
+const platform = browser.capabilities.platformName.toLowerCase();
+
 
 Given(/^The user sees (.*) slogan$/, async (string) => {
   const sloganTextLocator = home_locators.sloganText[platform];
